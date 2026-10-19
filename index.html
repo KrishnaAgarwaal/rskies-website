@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ================= SEO ================= -->
+  <title>rskies — Web &amp; Mobile App Development Studio | Projects from ₹19,999</title>
+  <meta name="description" content="rskies is a focused two-developer studio building websites, mobile apps, e-commerce stores and custom software for startups, small businesses and individuals. Quality projects starting at just ₹19,999." />
+  <meta name="author" content="rskies" />
+  <meta property="og:title" content="rskies — We Turn Your Ideas into Apps & Websites" />
+  <meta property="og:description" content="Websites, mobile apps & custom software by a focused 2-developer studio. Projects starting at just ₹19,999." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/favicon.png" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- ================= Favicon & PWA icons ================= -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0A0E13" />
+
+  <!-- ================= Fonts: Space Grotesk (display) + Inter (body) + JetBrains Mono (labels) ================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Apply saved theme BEFORE first paint to avoid a flash of the wrong theme.
+       Dark is the house style (Next-Tech-Lab vibe); light is available via the toggle. -->
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('rskies-theme'); } catch (e) {}
+      document.documentElement.setAttribute('data-theme', saved || 'dark');
+    })();
+  </script>
+
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "rskies",
+    "description": "Web and mobile app development studio. Websites, mobile apps, e-commerce and custom software from ₹19,999.",
+    "priceRange": "₹19,999+",
+    "areaServed": "Worldwide",
+    "address": { "@type": "PostalAddress", "addressCountry": "IN" }
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#home">Skip to content</a>
+
+  <!-- ============================================================
+       NAVBAR — minimal, frosted
+  ============================================================ -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="nav-brand" aria-label="rskies — back to top">
+        <!-- Two logos: the correct one for the active theme is shown via CSS -->
+        <img src="assets/logo.png" alt="rskies logo" class="logo-light" width="104" height="34" />
+        <img src="assets/logo-white.png" alt="rskies logo" class="logo-dark" width="104" height="34" />
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#contact" class="btn btn-primary btn-sm nav-cta-mobile">Get a Quote</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#contact" class="btn btn-primary btn-sm nav-cta">Get a Quote</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         1 · HERO — giant display type, floating tech chips, glow grid
+    ============================================================ -->
+    <section class="hero" id="home">
+      <!-- decorative layers: grid lines + glows -->
+      <div class="hero-bg" aria-hidden="true">
+        <span class="glow glow-1"></span>
+        <span class="glow glow-2"></span>
+      </div>
+
+      <!-- floating tech chips (the "orbiting characters" moment) -->
+      <div class="hero-chips" aria-hidden="true">
+        <span class="chip chip-1">📱 <b>Flutter</b></span>
+        <span class="chip chip-2">⚛️ <b>React</b></span>
+        <span class="chip chip-3">🛒 <b>E-commerce</b></span>
+        <span class="chip chip-4">🎨 <b>UI/UX</b></span>
+        <span class="chip chip-5">⚡ <b>Node.js</b></span>
+        <span class="chip chip-6">☁️ <b>Cloud</b></span>
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-logo" data-reveal>
+          <img src="assets/logo.png" alt="rskies" class="logo-light" width="190" height="62" />
+          <img src="assets/logo-white.png" alt="rskies" class="logo-dark" width="190" height="62" />
+        </div>
+
+        <h1 class="hero-title" data-reveal style="--d:.1s">
+          <span class="hero-title-line">We Turn Your Ideas</span>
+          <span class="hero-title-line">into <span class="gradient-text">Apps</span> &amp; <span class="gradient-text">Websites</span></span>
+        </h1>
+
+        <p class="hero-sub" data-reveal style="--d:.2s">
+          We design and build fast, beautiful digital products for startups, small businesses, and individuals. No agency price tag, no middlemen, just great work.
+        </p>
+
+        <div class="hero-actions" data-reveal style="--d:.3s">
+          <a href="#contact" class="btn btn-primary btn-lg">
+            Start Your Project
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#products" class="btn btn-ghost btn-lg">View Products</a>
+        </div>
+
+        <p class="hero-humans" data-reveal style="--d:.33s">
+          <span class="gradient-text">Made by Humans, for Humans</span> <span class="heart-pulse" aria-hidden="true">💙</span>
+        </p>
+
+        <!-- ================= HERO SHOWCASE MOCKUP (Dimension / Linear style) ================= -->
+        <div class="hero-showcase-wrap" data-reveal style="--d:.35s">
+          <div class="hero-horizon-glow" aria-hidden="true"></div>
+
+          <div class="hero-window">
+            <!-- Window top bar -->
+            <div class="win-bar">
+              <div class="win-dots" aria-hidden="true">
+                <span class="win-dot win-dot-red"></span>
+                <span class="win-dot win-dot-yellow"></span>
+                <span class="win-dot win-dot-green"></span>
+              </div>
+              <div class="win-tabs" id="heroMockupTabs">
+                <button class="win-tab-btn active" data-tab="shop"><span class="tab-emoji">🛒</span> ShopMate Store</button>
+                <button class="win-tab-btn" data-tab="app"><span class="tab-emoji">📱</span> TaskNest App</button>
+                <button class="win-tab-btn" data-tab="dash"><span class="tab-emoji">⚡</span> FinPulse SaaS</button>
+              </div>
+              <div class="win-status mono">
+                <span class="win-live-pulse" aria-hidden="true"></span>
+                <span>production: <b>live</b></span>
+              </div>
+            </div>
+
+            <!-- Window body -->
+            <div class="win-body">
+              <!-- Left: Studio Pipeline -->
+              <aside class="win-sidebar">
+                <div>
+                  <span class="win-side-title mono">BUILD PIPELINE</span>
+                  <div class="win-side-list mono">
+                    <div class="win-side-item active"><span class="chk">✓</span> UI/UX Flow</div>
+                    <div class="win-side-item active"><span class="chk">✓</span> Responsive Core</div>
+                    <div class="win-side-item active"><span class="chk">✓</span> API &amp; Database</div>
+                    <div class="win-side-item active"><span class="chk">✦</span> Production Deploy</div>
+                  </div>
+                </div>
+
+                <div class="win-side-metric">
+                  <span class="win-side-title mono" style="margin-bottom:0">LIGHTHOUSE SCORE</span>
+                  <div class="win-prog-bar"><div class="win-prog-fill"></div></div>
+                  <div style="display:flex;justify-content:space-between;font-size:0.74rem;" class="mono">
+                    <span style="color:#10B981">Performance</span>
+                    <b id="heroMockupScore">99 / 100</b>
+                  </div>
+                </div>
+              </aside>
+
+              <!-- Right: Interactive Canvas -->
+              <div class="win-main" id="heroMockupMain">
+                <!-- KPIs row -->
+                <div class="win-kpis">
+                  <div class="win-kpi-card">
+                    <span class="win-kpi-label mono" id="kpiLabel1">MONTHLY VOLUME</span>
+                    <span class="win-kpi-num" id="kpiNum1">₹4,82,900</span>
+                    <span class="win-kpi-badge mono" id="kpiBadge1">+142% vs last month</span>
+                  </div>
+                  <div class="win-kpi-card">
+                    <span class="win-kpi-label mono" id="kpiLabel2">ACTIVE USERS</span>
+                    <span class="win-kpi-num" id="kpiNum2">12,480</span>
+                    <span class="win-kpi-badge mono" id="kpiBadge2">↑ 3.2k live now</span>
+                  </div>
+                  <div class="win-kpi-card">
+                    <span class="win-kpi-label mono" id="kpiLabel3">EDGE LATENCY</span>
+                    <span class="win-kpi-num" id="kpiNum3">28ms</span>
+                    <span class="win-kpi-badge mono" id="kpiBadge3">Zero downtime</span>
+                  </div>
+                </div>
+
+                <!-- Showcase Grid -->
+                <div class="win-showcase-grid">
+                  <div class="win-feed-card">
+                    <div class="win-feed-header">
+                      <h5>Recent Deployments</h5>
+                      <span class="badge-pill mono" style="font-size:0.68rem;color:var(--cyan);background:var(--accent-soft);border:1px solid var(--accent-border);padding:0.2rem 0.6rem;border-radius:999px;">Live Stream</span>
+                    </div>
+                    <div class="win-feed-list" id="heroMockupFeed">
+                      <div class="win-feed-entry">
+                        <span class="entry-icon">⚡</span>
+                        <div class="entry-info">
+                          <b>Razorpay &amp; Stripe Multi-Currency</b>
+                          <span>Instant checkout with 99.9% uptime</span>
+                        </div>
+                        <span class="entry-time mono">2m ago</span>
+                      </div>
+                      <div class="win-feed-entry">
+                        <span class="entry-icon">🛒</span>
+                        <div class="entry-info">
+                          <b>Real-Time Inventory Engine</b>
+                          <span>Instant order sync with WhatsApp alerts</span>
+                        </div>
+                        <span class="entry-time mono">18m ago</span>
+                      </div>
+                      <div class="win-feed-entry">
+                        <span class="entry-icon">🚀</span>
+                        <div class="entry-info">
+                          <b>Next.js Server-Side Storefront</b>
+                          <span>Deployed to Vercel edge in 34ms</span>
+                        </div>
+                        <span class="entry-time mono">1h ago</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Activity visualizer -->
+                  <div class="win-vis-card">
+                    <div class="win-feed-header">
+                      <h5 class="mono" style="font-size:0.75rem;letter-spacing:0.04em">SYSTEM ACTIVITY</h5>
+                      <span class="mono" style="font-size:0.7rem;color:#10B981">60 FPS</span>
+                    </div>
+                    <div class="win-bars-wrap">
+                      <div class="win-bar-col" style="--h: 45%"></div>
+                      <div class="win-bar-col" style="--h: 70%"></div>
+                      <div class="win-bar-col" style="--h: 52%"></div>
+                      <div class="win-bar-col" style="--h: 88%"></div>
+                      <div class="win-bar-col" style="--h: 62%"></div>
+                      <div class="win-bar-col" style="--h: 96%"></div>
+                      <div class="win-bar-col" style="--h: 74%"></div>
+                      <div class="win-bar-col" style="--h: 90%"></div>
+                      <div class="win-bar-col" style="--h: 100%"></div>
+                      <div class="win-bar-col" style="--h: 82%"></div>
+                    </div>
+                    <div style="font-size:0.7rem;color:var(--text-muted);display:flex;justify-content:space-between;" class="mono">
+                      <span id="heroMockupStack">Stack: React · Node.js · MongoDB · Stripe</span>
+                      <span style="color:var(--cyan)">Verified ✓</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick trust stats — edit these numbers as you grow -->
+        <div class="hero-stats" data-reveal style="--d:.4s">
+          <div class="stat"><span class="stat-num">10+</span><span class="stat-label">projects delivered</span></div>
+          <div class="stat"><span class="stat-num">24h</span><span class="stat-label">response time</span></div>
+          <div class="stat"><span class="stat-num">100%</span><span class="stat-label">post-launch support</span></div>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#services" aria-label="Scroll down">
+        <span class="mono">scroll</span><span class="scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- ============================================================
+         MARQUEE — infinite scrolling strip (Next-Tech-Lab signature move)
+    ============================================================ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span>Websites <i>✦</i> Mobile Apps <i>✦</i> E-commerce <i>✦</i> UI/UX Design <i>✦</i> Custom Software <i>✦</i> Maintenance <i>✦</i></span>
+          <span>Websites <i>✦</i> Mobile Apps <i>✦</i> E-commerce <i>✦</i> UI/UX Design <i>✦</i> Custom Software <i>✦</i> Maintenance <i>✦</i></span>
+          <span>Websites <i>✦</i> Mobile Apps <i>✦</i> E-commerce <i>✦</i> UI/UX Design <i>✦</i> Custom Software <i>✦</i> Maintenance <i>✦</i></span>
+          <span>Websites <i>✦</i> Mobile Apps <i>✦</i> E-commerce <i>✦</i> UI/UX Design <i>✦</i> Custom Software <i>✦</i> Maintenance <i>✦</i></span>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span>Websites <i>✦</i> Mobile Apps <i>✦</i> E-commerce <i>✦</i> UI/UX Design <i>✦</i> Custom Software <i>✦</i> Maintenance <i>✦</i></span>
+          <span>Websites <i>✦</i> Mobile Apps <i>✦</i> E-commerce <i>✦</i> UI/UX Design <i>✦</i> Custom Software <i>✦</i> Maintenance <i>✦</i></span>
+          <span>Websites <i>✦</i> Mobile Apps <i>✦</i> E-commerce <i>✦</i> UI/UX Design <i>✦</i> Custom Software <i>✦</i> Maintenance <i>✦</i></span>
+          <span>Websites <i>✦</i> Mobile Apps <i>✦</i> E-commerce <i>✦</i> UI/UX Design <i>✦</i> Custom Software <i>✦</i> Maintenance <i>✦</i></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         2 · SERVICES
+    ============================================================ -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2>Services We Offer</h2>
+          <p>Everything you need to take your business online — designed, built and supported by the two people you actually talk to.</p>
+        </div>
+
+        <div class="grid services-grid">
+          <!-- Service 1 -->
+          <article class="card service-card" data-reveal>
+            <div class="icon-box">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3>Website Development</h3>
+            <p>Fast, responsive websites and landing pages built with modern tech — designed to turn visitors into customers.</p>
+          </article>
+
+          <!-- Service 2 -->
+          <article class="card service-card" data-reveal style="--d:.08s">
+            <div class="icon-box">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <h3>Mobile App Development</h3>
+            <p>Smooth Android &amp; iOS apps built with Flutter and React Native — from first sketch to Play Store &amp; App Store.</p>
+          </article>
+
+          <!-- Service 3 -->
+          <article class="card service-card" data-reveal style="--d:.16s">
+            <div class="icon-box">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </div>
+            <h3>E-commerce Stores</h3>
+            <p>Complete online stores with product catalogs, cart, secure payments and an admin panel you'll actually enjoy using.</p>
+          </article>
+
+          <!-- Service 4 -->
+          <article class="card service-card" data-reveal>
+            <div class="icon-box">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+            </div>
+            <h3>UI/UX Design</h3>
+            <p>Clean, modern interfaces and click-through prototypes that make your product feel effortless — designed before code.</p>
+          </article>
+
+          <!-- Service 5 -->
+          <article class="card service-card" data-reveal style="--d:.08s">
+            <div class="icon-box">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>Custom Software &amp; Web Apps</h3>
+            <p>Dashboards, portals, APIs and internal tools built exactly around how your business works — not the other way round.</p>
+          </article>
+
+          <!-- Service 6 -->
+          <article class="card service-card" data-reveal style="--d:.16s">
+            <div class="icon-box">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Maintenance &amp; Support</h3>
+            <p>Bug fixes, updates, backups and improvements — we keep your product healthy long after launch day.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3 · OUR PRODUCTS  (cards are rendered from script.js → PRODUCTS)
+    ============================================================ -->
+    <section class="section section-alt" id="products">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2>Our Products</h2>
+          <p>A few things we've designed, built and shipped ourselves. Each one solves a real problem — yours could be next.</p>
+        </div>
+
+        <!-- Category filter tabs -->
+        <div class="filter-tabs" role="tablist" aria-label="Filter products by category" data-reveal>
+          <button class="filter-tab active" data-filter="all">All</button>
+          <button class="filter-tab" data-filter="web">Web Apps</button>
+          <button class="filter-tab" data-filter="mobile">Mobile Apps</button>
+          <button class="filter-tab" data-filter="tool">Tools</button>
+        </div>
+
+        <!-- Product cards injected here by script.js -->
+        <div class="grid products-grid" id="productsGrid"></div>
+
+        <div class="products-cta" data-reveal>
+          <p class="mono products-cta-kicker">Like what you see?</p>
+          <a href="#contact" class="btn btn-primary btn-lg">
+            Want a product like this? Let's build it
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4 · PRICING
+    ============================================================ -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2>Pricing That Makes Sense</h2>
+          <p>No hidden costs, no jargon. Pick a starting point — we'll give you an exact quote before any work begins.</p>
+        </div>
+
+        <div class="pricing-wrap">
+          <!-- Featured Package -->
+          <article class="card price-card featured" data-reveal>
+            <span class="plan-badge mono">Featured Package</span>
+            <h3 class="plan-name">Studio Development</h3>
+            <p class="plan-tag mono">Websites, Apps &amp; Custom Software</p>
+            <div class="plan-price">₹19,999<span>/ starting</span></div>
+            <p class="plan-desc">From clean landing pages to complete custom web and mobile apps built around your exact workflow.</p>
+            <ul class="plan-features">
+              <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Mobile-first responsive design &amp; smooth animations</li>
+              <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Fast delivery with regular staging previews</li>
+              <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Contact forms, WhatsApp &amp; payment gateway integration</li>
+              <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Custom dashboards, APIs &amp; mobile apps on demand</li>
+              <li><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Full source code ownership &amp; post-launch support</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary btn-lg btn-block">Contact for More Info →</a>
+          </article>
+        </div>
+
+        <p class="pricing-note mono" data-reveal>// every project is unique — reach out with your requirements for an exact, tailored quote.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5 · WHY CHOOSE US
+    ============================================================ -->
+    <section class="section section-alt" id="why">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2>Why Choose Us</h2>
+          <p>Small team, big commitment. Here's what working with rskies feels like.</p>
+        </div>
+
+        <div class="grid why-grid">
+          <article class="card why-card" data-reveal>
+            <div class="icon-box">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+            </div>
+            <h3>Affordable, Transparent Pricing</h3>
+            <p>Agency-quality work without agency overheads. You know the full cost before we write a single line of code.</p>
+          </article>
+
+          <article class="card why-card" data-reveal style="--d:.08s">
+            <div class="icon-box">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3>Talk Directly to the Developers</h3>
+            <p>No account managers, no telephone games. You speak with the two people actually building your product.</p>
+          </article>
+
+          <article class="card why-card" data-reveal style="--d:.16s">
+            <div class="icon-box">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h3>Fast Delivery</h3>
+            <p>A lean team means quick decisions and quick builds. We ship in days and weeks — not months.</p>
+          </article>
+
+          <article class="card why-card" data-reveal style="--d:.24s">
+            <div class="icon-box">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+            </div>
+            <h3>Post-Launch Support</h3>
+            <p>Launch day is just the beginning. We fix, update and improve your product long after it goes live.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6 · PROCESS
+    ============================================================ -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2>From Idea to Launch in 4 Steps</h2>
+          <p>A simple, transparent process — you'll always know what's happening and what comes next.</p>
+        </div>
+
+        <ol class="process-steps">
+          <li class="process-step" data-reveal>
+            <div class="step-num mono">01</div>
+            <h3>Discuss</h3>
+            <p>Tell us your idea over a call or chat. We listen, ask the right questions and suggest what fits your budget.</p>
+          </li>
+          <li class="process-step" data-reveal style="--d:.1s">
+            <div class="step-num mono">02</div>
+            <h3>Design</h3>
+            <p>We sketch the look and flow first, so you see and approve the design before development begins.</p>
+          </li>
+          <li class="process-step" data-reveal style="--d:.2s">
+            <div class="step-num mono">03</div>
+            <h3>Develop</h3>
+            <p>We build in short cycles and share regular previews — you always know exactly where things stand.</p>
+          </li>
+          <li class="process-step" data-reveal style="--d:.3s">
+            <div class="step-num mono">04</div>
+            <h3>Deliver</h3>
+            <p>We test everything end-to-end, launch your product, hand over the code — and stay for support.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- ============================================================
+         MARQUEE #2 — before the contact section
+    ============================================================ -->
+    <div class="marquee marquee-ghost" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span>Let's Build <i>✦</i> Start at ₹19,999 <i>✦</i> Ship Fast <i>✦</i> Support Forever <i>✦</i></span>
+          <span>Let's Build <i>✦</i> Start at ₹19,999 <i>✦</i> Ship Fast <i>✦</i> Support Forever <i>✦</i></span>
+          <span>Let's Build <i>✦</i> Start at ₹19,999 <i>✦</i> Ship Fast <i>✦</i> Support Forever <i>✦</i></span>
+          <span>Let's Build <i>✦</i> Start at ₹19,999 <i>✦</i> Ship Fast <i>✦</i> Support Forever <i>✦</i></span>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span>Let's Build <i>✦</i> Start at ₹19,999 <i>✦</i> Ship Fast <i>✦</i> Support Forever <i>✦</i></span>
+          <span>Let's Build <i>✦</i> Start at ₹19,999 <i>✦</i> Ship Fast <i>✦</i> Support Forever <i>✦</i></span>
+          <span>Let's Build <i>✦</i> Start at ₹19,999 <i>✦</i> Ship Fast <i>✦</i> Support Forever <i>✦</i></span>
+          <span>Let's Build <i>✦</i> Start at ₹19,999 <i>✦</i> Ship Fast <i>✦</i> Support Forever <i>✦</i></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         9 · CONTACT
+    ============================================================ -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2>Let's Build Something Together</h2>
+          <p>Tell us about your idea — we usually reply within a few hours.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact channels (placeholders — replace with your real details) -->
+          <div class="contact-info">
+            <a class="card contact-card whatsapp-card" href="https://wa.me/919876543210?text=Hi%20rskies!%20I%20have%20a%20project%20idea." target="_blank" rel="noopener" data-reveal>
+              <div class="icon-box whatsapp">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </div>
+              <div>
+                <h3>WhatsApp</h3>
+                <p>+91 98765 43210 — fastest way to reach us</p>
+              </div>
+              <span class="contact-go">Chat now →</span>
+            </a>
+
+            <a class="card contact-card" href="mailto:hello@rskies.in" data-reveal style="--d:.08s">
+              <div class="icon-box">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <h3>Email</h3>
+                <p>hello@rskies.in</p>
+              </div>
+              <span class="contact-go">Write to us →</span>
+            </a>
+
+            <a class="card contact-card" href="tel:+919876543210" data-reveal style="--d:.16s">
+              <div class="icon-box">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <h3>Phone</h3>
+                <p>+91 98765 43210 · Mon–Sat, 10am–8pm IST</p>
+              </div>
+              <span class="contact-go">Call us →</span>
+            </a>
+          </div>
+
+          <!-- Contact form -->
+          <form class="card contact-form" id="contactForm" novalidate data-reveal style="--d:.1s">
+            <!-- To receive submissions to your email, paste your free Web3Forms access key here: https://web3forms.com -->
+            <input type="hidden" name="access_key" value="" />
+            <div class="form-row">
+              <div class="form-field">
+                <label for="cf-name">Name <span class="req">*</span></label>
+                <input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name" />
+              </div>
+              <div class="form-field">
+                <label for="cf-email">Email <span class="req">*</span></label>
+                <input type="email" id="cf-email" name="email" placeholder="you@example.com" required autocomplete="email" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="cf-phone">Phone</label>
+                <input type="tel" id="cf-phone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" />
+              </div>
+              <div class="form-field">
+                <label for="cf-type">Project Type <span class="req">*</span></label>
+                <select id="cf-type" name="projectType" required>
+                  <option value="" selected disabled>Select a project type…</option>
+                  <option>Website / Landing Page</option>
+                  <option>Mobile App</option>
+                  <option>E-commerce Store</option>
+                  <option>UI/UX Design</option>
+                  <option>Custom Software / Web App</option>
+                  <option>Maintenance &amp; Support</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="cf-message">Message <span class="req">*</span></label>
+              <textarea id="cf-message" name="message" rows="5" placeholder="Tell us a little about your idea, timeline and budget…" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block" id="formSubmitBtn">Send Message 🚀</button>
+            <p class="form-hint">By sending, you agree to be contacted about your enquiry. We never share your details.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       10 · FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="nav-brand" aria-label="rskies — back to top">
+          <img src="assets/logo-white.png" alt="rskies logo" width="104" height="34" />
+        </a>
+        <p>We turn your ideas into apps &amp; websites. A two-developer studio for startups, small businesses and individuals — projects from ₹19,999.</p>
+        <div class="socials">
+          <a href="#" aria-label="GitHub" title="GitHub"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+          <a href="#" aria-label="LinkedIn" title="LinkedIn"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4v1.57A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" aria-label="X (Twitter)" title="X (Twitter)"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" aria-label="Instagram" title="Instagram"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://wa.me/919876543210" aria-label="WhatsApp" title="WhatsApp"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Quick links">
+        <h4 class="mono">Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#products">Products</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Services">
+        <h4 class="mono">Services</h4>
+        <a href="#services">Website Development</a>
+        <a href="#services">Mobile App Development</a>
+        <a href="#services">E-commerce Stores</a>
+        <a href="#services">UI/UX Design</a>
+        <a href="#services">Custom Software</a>
+        <a href="#services">Maintenance &amp; Support</a>
+      </nav>
+
+      <div class="footer-col">
+        <h4 class="mono">Contact</h4>
+        <a href="mailto:hello@rskies.in">hello@rskies.in</a>
+        <a href="tel:+919876543210">+91 98765 43210</a>
+        <p class="footer-loc">India · Working worldwide 🌏</p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> rskies. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Back-to-top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+
+  <!-- Success toast for the contact form -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Smooth Momentum Scrolling (same as nexttechlab.in) -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
