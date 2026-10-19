@@ -970,7 +970,11 @@ body.menu-open::before {
 .filter-tab:hover { border-color: var(--cyan); color: var(--cyan); }
 .filter-tab.active { background: var(--grad); border-color: transparent; color: #04121A; box-shadow: 0 8px 24px rgba(40, 216, 254, 0.3); }
 
-.products-grid { grid-template-columns: 1fr; max-width: 580px; margin: 0 auto; }
+.products-grid {
+  grid-template-columns: 1fr;
+  max-width: 580px;
+  margin: 0 auto;
+}
 
 /* Per-category banner gradients */
 .cat-web    { --g1: #2F6BFF; --g2: #28D8FE; }
@@ -993,6 +997,31 @@ body.menu-open::before {
 }
 .banner-icon { font-size: 3rem; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.35)); transition: transform 0.35s ease; position: relative; }
 .product-card:hover .banner-icon { transform: scale(1.15) rotate(-5deg); }
+
+.product-banner-image {
+  height: 200px;
+  background: #F1FAF5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.product-banner-image::before {
+  display: none;
+}
+.product-img {
+  max-height: 160px;
+  max-width: 85%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.08));
+}
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
 
 .status-badge {
   position: absolute; top: 0.8rem; right: 0.8rem; z-index: 1;
@@ -1175,11 +1204,8 @@ body.menu-open::before {
 .about-promise strong { color: var(--heading); }
 
 /* ---------- 15. Contact ---------- */
-.contact-grid { display: flex; justify-content: center; }
-.contact-info { display: grid; grid-template-columns: 1fr; gap: 1.25rem; width: 100%; max-width: 760px; }
-@media (min-width: 680px) {
-  .contact-info { grid-template-columns: repeat(2, 1fr); }
-}
+.contact-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+.contact-info { display: grid; gap: 1rem; align-content: start; }
 
 .contact-card { display: flex; align-items: center; gap: 1.1rem; padding: 1.3rem 1.45rem; }
 .contact-card .icon-box { margin-bottom: 0; }
@@ -1337,6 +1363,7 @@ textarea { resize: vertical; min-height: 120px; }
 
 /* ≥ 992px: desktop layouts */
 @media (min-width: 992px) {
+  .contact-grid { grid-template-columns: 0.9fr 1.1fr; }
   .footer-grid { grid-template-columns: 1.6fr 1fr 1fr 1fr; }
   .services-grid { grid-template-columns: repeat(3, 1fr); }
   .why-grid { grid-template-columns: repeat(4, 1fr); }

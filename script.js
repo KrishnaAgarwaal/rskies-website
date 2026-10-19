@@ -23,8 +23,8 @@ const PRODUCTS = [
   {
     name: 'Candle Mantra',
     category: 'web',
-    icon: '🕯️',
-    description: 'An interactive Learning Management System (LMS) with student portals, courses, and real-time progress tracking.',
+    image: 'assets/candlemantra.png',
+    description: 'An interactive Learning Management System (LMS) with student learning portals, courses, and real-time progress tracking.',
     tech: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript'],
     status: 'live',
     features: [
@@ -54,10 +54,14 @@ function productCardHTML(p) {
     .map((l, i) => `<a class="btn btn-sm ${i === 0 ? 'btn-primary' : 'btn-ghost'}" href="${l.url}" ${l.url.startsWith('http') ? 'target="_blank" rel="noopener"' : ''}>${l.label}</a>`)
     .join('');
 
+  const visual = p.image
+    ? `<img src="${p.image}" alt="${p.name}" class="product-img" />`
+    : `<span class="banner-icon" aria-hidden="true">${p.icon || '🚀'}</span>`;
+
   return `
     <article class="card product-card cat-${p.category}" data-category="${p.category}" data-reveal>
-      <div class="product-banner">
-        <span class="banner-icon" aria-hidden="true">${p.icon}</span>
+      <div class="product-banner ${p.image ? 'product-banner-image' : ''}">
+        ${visual}
         <span class="status-badge status-${p.status}"><span class="dot"></span>${STATUS_LABEL[p.status]}</span>
       </div>
       <div class="product-body">
@@ -466,4 +470,4 @@ function showToast(message) {
 document.getElementById('year').textContent = new Date().getFullYear();
 
 /* ---------- Boot: draw the product grid ---------- */
-renderProducts('all');
+renderProducts('web');

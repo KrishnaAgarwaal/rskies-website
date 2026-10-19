@@ -378,6 +378,11 @@
           <p>A few things we've designed, built and shipped ourselves. Each one solves a real problem — yours could be next.</p>
         </div>
 
+        <!-- Category filter tabs -->
+        <div class="filter-tabs" role="tablist" aria-label="Filter products by category" data-reveal>
+          <button class="filter-tab active" data-filter="web">Web Apps</button>
+        </div>
+
         <!-- Product cards injected here by script.js -->
         <div class="grid products-grid" id="productsGrid"></div>
 
@@ -540,7 +545,7 @@
         </div>
 
         <div class="contact-grid">
-          <!-- Direct Contact Channels -->
+          <!-- Contact channels (placeholders — replace with your real details) -->
           <div class="contact-info">
             <a class="card contact-card whatsapp-card" href="https://wa.me/491749586659?text=Hi%20rskies!%20I%20have%20a%20project%20idea." target="_blank" rel="noopener" data-reveal>
               <div class="icon-box whatsapp">
@@ -564,6 +569,50 @@
               <span class="contact-go">Write to us →</span>
             </a>
           </div>
+
+          <!-- Contact form -->
+          <form class="card contact-form" id="contactForm" novalidate data-reveal style="--d:.1s">
+            <!-- To receive submissions to your email, paste your free Web3Forms access key here: https://web3forms.com -->
+            <input type="hidden" name="access_key" value="" />
+            <div class="form-row">
+              <div class="form-field">
+                <label for="cf-name">Name <span class="req">*</span></label>
+                <input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name" />
+              </div>
+              <div class="form-field">
+                <label for="cf-email">Email <span class="req">*</span></label>
+                <input type="email" id="cf-email" name="email" placeholder="you@example.com" required autocomplete="email" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="cf-phone">Phone</label>
+                <input type="tel" id="cf-phone" name="phone" placeholder="+49 174 9586659" autocomplete="tel" />
+              </div>
+              <div class="form-field">
+                <label for="cf-type">Project Type <span class="req">*</span></label>
+                <select id="cf-type" name="projectType" required>
+                  <option value="" selected disabled>Select a project type…</option>
+                  <option>Website / Landing Page</option>
+                  <option>Mobile App</option>
+                  <option>E-commerce Store</option>
+                  <option>UI/UX Design</option>
+                  <option>Custom Software / Web App</option>
+                  <option>Maintenance &amp; Support</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="cf-message">Message <span class="req">*</span></label>
+              <textarea id="cf-message" name="message" rows="5" placeholder="Tell us a little about your idea, timeline and budget…" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block" id="formSubmitBtn">Send Message 🚀</button>
+            <p class="form-hint">By sending, you agree to be contacted about your enquiry. We never share your details.</p>
+          </form>
         </div>
       </div>
     </section>

@@ -28,20 +28,24 @@ python3 -m http.server 8000
 ## Editing your content
 
 ### Products (`script.js` → `PRODUCTS`)
-Add / edit / remove objects freely — the grid and cards update automatically.
+Add / edit / remove objects freely — the grid, filters and cards update automatically.
 
 ```js
 {
-  name: 'Candle Mantra',
-  category: 'web',
-  icon: '🕯️',
-  description: 'An interactive Learning Management System (LMS)...',
-  tech: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript'],
-  status: 'live',
-  features: ['Feature 1', 'Feature 2'],
-  links: [{ label: 'Visit Website ↗', url: 'https://app.candlemantra.in' }],
+  name: 'ShopMate',
+  category: 'web',              // "web" | "mobile" | "tool"
+  icon: '🛒',                    // any emoji
+  description: 'One-line description.',
+  tech: ['React', 'Node.js'],   // tech-stack tags
+  status: 'live',               // "live" | "beta" | "soon"
+  features: ['Hover feature 1', 'feature 2'],
+  links: [{ label: 'Visit Product', url: 'https://…' }],
 }
 ```
+
+### Portfolio (`script.js` → `PORTFOLIO`)
+Same idea — `name`, `category` (chip label), `icon`, `description`, `tech`,
+`gradient: ['#hex1', '#hex2']` (cover colors) and `url`.
 
 ### Contact details
 WhatsApp: `+491749586659` (`https://wa.me/491749586659`)
@@ -56,11 +60,22 @@ CSS rule (`.avatar-img { width:100%; height:100%; object-fit:cover; border-radiu
 All theme colors are CSS variables in `:root` (dark) and `[data-theme="light"]`.
 `--blue` (#2F6BFF) comes from the logo's kite, `--cyan` (#28D8FE) is the sky accent.
 
+## Connecting the contact form
+
+The form currently shows a success message without sending (no backend).
+To receive real messages, pick one:
+
+- **Formspree / Web3Forms**: create a form, then in `script.js` (contact form
+  submit handler) POST the `FormData` to your endpoint with `fetch`.
+- **Netlify Forms**: add `netlify` to the `<form>` attributes when deploying on Netlify.
+- **Your own API**: replace the demo block in the submit handler with your `fetch` call.
+
 ## Features
 
 - Mobile-first responsive layout (breakpoints at 560 / 760 / 900 / 992 px)
 - Dark (default) + light theme with persistence and no flash-on-load
 - Smooth scrolling, scroll-reveal animations, marquee strips, floating hero chips
-- Direct WhatsApp and Email integration
+- Product filter tabs, hover/tap feature reveal, status badges
+- Section-aware navbar highlighting, back-to-top, toast notifications
 - SEO meta + Open Graph + JSON-LD structured data
 - Reduced-motion support & keyboard focus styles
