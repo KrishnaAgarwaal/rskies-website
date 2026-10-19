@@ -21,56 +21,21 @@
 ============================================================ */
 const PRODUCTS = [
   {
-    name: 'ShopMate',
+    name: 'Candle Mantra',
     category: 'web',
-    icon: '🛒',
-    description: 'A lightning-fast online store platform with inventory and payments built in.',
-    tech: ['React', 'Node.js', 'MongoDB'],
+    icon: '🕯️',
+    description: 'An interactive Learning Management System (LMS) with student portals, courses, and real-time progress tracking.',
+    tech: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript'],
     status: 'live',
     features: [
-      'Product catalog with smart search',
-      'Secure checkout & payment gateway',
-      'Owner dashboard with sales analytics',
+      'Comprehensive student & instructor learning portals',
+      'Fast server-side rendering & interactive courses',
+      'Production deployment on cloud infrastructure',
     ],
     links: [
-      { label: 'Visit Product', url: '#' },
-      { label: 'View Demo', url: '#' },
+      { label: 'Visit Website ↗', url: 'https://app.candlemantra.in' },
     ],
   },
-  {
-    name: 'TaskNest',
-    category: 'mobile',
-    icon: '📱',
-    description: 'A calm daily planner that keeps tasks, habits and reminders in one place.',
-    tech: ['Flutter', 'Firebase'],
-    status: 'beta',
-    features: [
-      'Offline-first task lists',
-      'Smart reminders & recurring tasks',
-      'Cloud sync across all your devices',
-    ],
-    links: [
-      { label: 'Play Store', url: '#' },
-      { label: 'App Store', url: '#' },
-    ],
-  },
-  {
-    name: 'BillWise',
-    category: 'tool',
-    icon: '🧾',
-    description: 'GST-ready invoicing for small businesses — create, send and track bills in minutes.',
-    tech: ['Vue.js', 'Express', 'PostgreSQL'],
-    status: 'soon',
-    features: [
-      'One-click invoices & GST reports',
-      'Client and payment tracking',
-      'Monthly business summary at a glance',
-    ],
-    links: [
-      { label: 'View Demo', url: '#' },
-    ],
-  },
-  /* ➕ Add more products here — copy any object above and tweak it */
 ];
 
 
@@ -425,62 +390,64 @@ sections.forEach((s) => sectionObserver.observe(s));
 /* ---------- Contact form with Async Submission ---------- */
 const contactForm = document.getElementById('contactForm');
 
-contactForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-  // Mark empty required fields (simple inline validation)
-  let valid = true;
-  contactForm.querySelectorAll('[required]').forEach((field) => {
-    const bad = !field.value.trim();
-    field.closest('.form-field').classList.toggle('error', bad);
-    if (bad) valid = false;
-  });
-  if (!valid) {
-    showToast('⚠️ Please fill in all required fields.');
-    return;
-  }
-
-  const submitBtn = contactForm.querySelector('button[type="submit"]');
-  const originalBtnText = submitBtn.innerHTML;
-  submitBtn.disabled = true;
-  submitBtn.innerHTML = '<span class="spinner"></span> Sending...';
-
-  const formData = new FormData(contactForm);
-  const name = contactForm.querySelector('#cf-name').value.trim().split(' ')[0];
-  const accessKey = contactForm.querySelector('input[name="access_key"]')?.value;
-
-  try {
-    if (accessKey && accessKey !== 'YOUR_ACCESS_KEY_HERE') {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData,
-      });
-      const data = await res.json();
-      if (!data.success) throw new Error(data.message || 'Submission failed');
-    } else {
-      // Fluid simulated delay if no live access key is provided yet
-      await new Promise((r) => setTimeout(r, 650));
+    // Mark empty required fields (simple inline validation)
+    let valid = true;
+    contactForm.querySelectorAll('[required]').forEach((field) => {
+      const bad = !field.value.trim();
+      field.closest('.form-field').classList.toggle('error', bad);
+      if (bad) valid = false;
+    });
+    if (!valid) {
+      showToast('⚠️ Please fill in all required fields.');
+      return;
     }
 
-    contactForm.innerHTML = `
-      <div class="form-success">
-        <div class="big">🎉</div>
-        <h3>Thanks, ${name}! Message sent.</h3>
-        <p>We've received your enquiry and will get back to you within a few hours.<br/>
-        In a hurry? <a href="https://wa.me/919876543210" style="color:var(--blue);font-weight:600">Ping us on WhatsApp →</a></p>
-      </div>`;
-    showToast('✅ Message sent successfully!');
-  } catch (err) {
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = originalBtnText;
-    showToast('❌ Failed to send. Please reach out via WhatsApp or email directly.');
-  }
-});
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="spinner"></span> Sending...';
 
-/* Clear the error highlight as soon as the user types */
-contactForm.addEventListener('input', (e) => {
-  e.target.closest('.form-field')?.classList.remove('error');
-});
+    const formData = new FormData(contactForm);
+    const name = contactForm.querySelector('#cf-name').value.trim().split(' ')[0];
+    const accessKey = contactForm.querySelector('input[name="access_key"]')?.value;
+
+    try {
+      if (accessKey && accessKey !== 'YOUR_ACCESS_KEY_HERE') {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData,
+        });
+        const data = await res.json();
+        if (!data.success) throw new Error(data.message || 'Submission failed');
+      } else {
+        // Fluid simulated delay if no live access key is provided yet
+        await new Promise((r) => setTimeout(r, 650));
+      }
+
+      contactForm.innerHTML = `
+        <div class="form-success">
+          <div class="big">🎉</div>
+          <h3>Thanks, ${name}! Message sent.</h3>
+          <p>We've received your enquiry and will get back to you within a few hours.<br/>
+          In a hurry? <a href="https://wa.me/491749586659" style="color:var(--blue);font-weight:600">Ping us on WhatsApp →</a></p>
+        </div>`;
+      showToast('✅ Message sent successfully!');
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnText;
+      showToast('❌ Failed to send. Please reach out via WhatsApp or email directly.');
+    }
+  });
+
+  /* Clear the error highlight as soon as the user types */
+  contactForm.addEventListener('input', (e) => {
+    e.target.closest('.form-field')?.classList.remove('error');
+  });
+}
 
 /* ---------- Toast helper ---------- */
 const toast = document.getElementById('toast');
