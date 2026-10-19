@@ -81,13 +81,16 @@ function renderProducts(filter = 'all') {
 }
 
 /* Filter tabs */
-document.querySelector('.filter-tabs').addEventListener('click', (e) => {
-  const tab = e.target.closest('.filter-tab');
-  if (!tab) return;
-  document.querySelectorAll('.filter-tab').forEach((t) => t.classList.remove('active'));
-  tab.classList.add('active');
-  renderProducts(tab.dataset.filter);
-});
+const filterTabsContainer = document.querySelector('.filter-tabs');
+if (filterTabsContainer) {
+  filterTabsContainer.addEventListener('click', (e) => {
+    const tab = e.target.closest('.filter-tab');
+    if (!tab) return;
+    document.querySelectorAll('.filter-tab').forEach((t) => t.classList.remove('active'));
+    tab.classList.add('active');
+    renderProducts(tab.dataset.filter);
+  });
+}
 
 /* On touch devices there is no hover — tap a card to reveal its features */
 function wireTouchExpand() {
