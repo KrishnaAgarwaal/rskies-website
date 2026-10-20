@@ -1235,11 +1235,22 @@ body.menu-open::before {
   align-items: center;
   gap: 0.45rem;
   margin-top: 1.2rem;
+  width: 100%;
+}
+.tags-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
 }
 .about-tags span {
-  font-size: 0.72rem; color: var(--text-muted);
-  border: 1px solid var(--border-strong); border-radius: 6px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
   padding: 0.28rem 0.68rem;
+  white-space: nowrap;
 }
 .about-actions {
   margin-top: 1.5rem;
