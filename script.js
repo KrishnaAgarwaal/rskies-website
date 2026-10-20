@@ -376,6 +376,7 @@ const SECTION_NAV_MAP = {
   pricing: 'pricing',
   why: 'pricing',
   process: 'pricing',
+  about: 'about',
   contact: 'contact',
 };
 
