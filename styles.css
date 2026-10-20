@@ -1229,7 +1229,13 @@ body.menu-open::before {
   line-height: 1.4;
 }
 .about-card > p { color: var(--text-muted); font-size: 0.94rem; line-height: 1.55; }
-.about-tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.2rem; }
+.about-tags {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1.2rem;
+}
 .about-tags span {
   font-size: 0.72rem; color: var(--text-muted);
   border: 1px solid var(--border-strong); border-radius: 6px;
