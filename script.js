@@ -441,7 +441,7 @@ if (contactForm) {
           <div class="big">🎉</div>
           <h3>Thanks, ${name}! Message sent.</h3>
           <p>We've received your enquiry and will get back to you within a few hours.<br/>
-          In a hurry? <a href="https://wa.me/491749586659" style="color:var(--blue);font-weight:600">Ping us on WhatsApp →</a></p>
+          In a hurry? Chat on WhatsApp: <a href="https://wa.me/491749586659" style="color:var(--blue);font-weight:600" target="_blank" rel="noopener">Worldwide (+49 174 9586659)</a> or <a href="https://wa.me/919719439555" style="color:var(--blue);font-weight:600" target="_blank" rel="noopener">India (+91 97194 39555)</a> →</p>
         </div>`;
       showToast('✅ Message sent successfully!');
     } catch (err) {
